@@ -3,7 +3,7 @@ import axios from "axios";
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=21ac938b8d68aecb2f49b0f34cd45b40`;
+  //when you want to run it make sure to paste the url here from readme file
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
@@ -14,10 +14,10 @@ function App() {
       setLocation("");
     }
   };
-  
+
   return (
     <div className="app">
-      <div className="search"> 
+      <div className="search">
         <input
           value={location}
           onChange={(event) => setLocation(event.target.value)}
@@ -40,22 +40,24 @@ function App() {
             ) : null}
           </div>
         </div>
-        {data.name != undefined &&
-        <div className="bottom">
-        <div className="feels">
-          {data.main ? <p className="bold">{data.main.feels_like}</p> : null}
-          <p>Feels like</p>
-        </div>
-        <div className="humidity">
-          {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
-          <p>humidity</p>
-        </div>
-        <div className="wind">
-          {data.wind ? <p className="bold">{data.wind.speed} MPH</p> : null}
-          <p>Wind Speed</p>
-        </div>
-      </div>
-        }       
+        {data.name != undefined && (
+          <div className="bottom">
+            <div className="feels">
+              {data.main ? (
+                <p className="bold">{data.main.feels_like}</p>
+              ) : null}
+              <p>Feels like</p>
+            </div>
+            <div className="humidity">
+              {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
+              <p>humidity</p>
+            </div>
+            <div className="wind">
+              {data.wind ? <p className="bold">{data.wind.speed} MPH</p> : null}
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

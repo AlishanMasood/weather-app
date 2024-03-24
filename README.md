@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-// const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=21ac938b8d68aecb2f49b0f34cd45b40`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=21ac938b8d68aecb2f49b0f34cd45b40`;
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
